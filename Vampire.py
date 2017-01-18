@@ -55,3 +55,5 @@ elif age > 100
     print('You old.')
 elif age > 2000 # this statement will never occur
     print('Love me :C')
+else:
+    print('We\'ve come to the end for you my friend.')

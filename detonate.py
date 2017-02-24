@@ -4,10 +4,7 @@
 # Enjoy, Golgothus
 # Ch. 2 Equivalent While Loops pg 55
 
-print ('My name is: ')
-name = input()
-n = 0
+for i in range (10, -1, -1):
+    print('The lair will self destruct in t minus - ' + str(i) + ' seconds.')
 
-while n < 15:
-    print('Hello, ' + name + '. This is sentencer number (' + str(n + 1) + ').')
-    n = n + 1
+print('Self destructing now. Goodbye.')

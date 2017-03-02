@@ -1,17 +1,15 @@
-"""
-Beginning of the end.
-I'm embarking on my journey to learn Python
-These comments will always be in the beginning of my programs
-Enjoy, Golgothus
-https://github.com/Golgothus
-Ch. 3 Functions
-"""
+# Beginning of the end.
+# I'm embarking on my journey to learn Python
+# These comments will always be in the beginning of my programs
+# Enjoy, Golgothus
+# https://github.com/Golgothus
+# Ch. 3 Functions
 
-import sys
+def hello():
+    print("""I made a mistake!
+This is still part of that mistake.
+^all these above statements, I hate them.""")
+    print('\n')
 
-while True:
-    print('Type exit to close.')
-    userText = raw_input()
-    if userText.lower() == 'close':
-        sys.exit()
-    print('The program did not close because you typed \'' + userText.lower() + '\'.')
+for i in range(5):
+    hello()

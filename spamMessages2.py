@@ -10,9 +10,9 @@ def hello(name):
 
 message = ''
 
-if message.lower() != 'No':
+while message.lower() != 'yes':
     print('Please enter your name: ')
-    name = raw_input()
+    name = input()
     hello(name)
-    print('Would you like to close this program?')
-    message = raw_input()
+    print('Would you like to close this program,' + name + '?')
+    message = input()

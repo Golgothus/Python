@@ -5,18 +5,27 @@
 # https://github.com/Golgothus
 # Chapter 5 - Dictionaries
 
-movies = {'The Good Dinosaur': 'November 25, 2015 - Pixar Animation Studios', \
-'Zootopia': 'March 4, 2016 - Walt Disney Animation Studios', \
+movies = {'The Good Dinosaur': 'November 25, 2015 - Pixar Animation Studios',
+'Zootopia': 'March 4, 2016 - Walt Disney Animation Studios',
 'Moana': 'November 23, 2016 - Walt Disney Animation Studios'}
 
-print(movies.keys())
+# k will pull in the index for the dict key
+for k in movies:
+    print(k)
+
+print('')
+
+# The loop below will run until the user presses enter
+# This loop will check the dictionary, if there is a key
+# It will output the key-value pair
+# If no key is found, it will allow for the user to add one
 
 while True:
-    print("Please enter a recent release from Disney to view its airing date.")
+    print('Please enter a recent release from Disney to view its airing date.')
+    print('(Leave blank to quit)')
     name = input()
     if name == '':
         break
-
     if name in movies:
         print('The release date is - ' + movies[name])
     else:

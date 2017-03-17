@@ -5,8 +5,6 @@
 # https://github.com/Golgothus
 # Chapter 4 - Lists
 # Practice assignment for Chapter 4
-x = 0
-y = 0
 
 grid = [['.', '.', '.', '.', '.', '.'],
         ['.', 'O', 'O', '.', '.', '.'],

@@ -2,7 +2,7 @@
 # I'm embarking on my journey to learn Python
 # These comments will always be in the beginning of my programs
 # Enjoy, Golgothus
-# Ch. 2 Continue
+# Ch. 2
 
 while True:
     print('Who are you?')

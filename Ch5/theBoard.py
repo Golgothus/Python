@@ -4,22 +4,15 @@
 # Enjoy, Golgothus
 # https://github.com/Golgothus
 # Chapter 5 - Dictionaries
-import pprint
 
-message = 'Ah you think darkness is your ally? You merely adopted the dark. \
-I was born in it. I didn\'t see the light until I was already a man, \
-by then it was nothing to me but blinding!'
-letterCount = {}
+theBoard = {'top-L': 'O', 'top-M': 'O', 'top-R': 'O',
+            'mid-L': 'X', 'mid-M': 'X', 'mid-R': ' ',
+            'low-L': ' ', 'low-M': ' ', 'low-R': 'X'}
 
-for character in message:
-    letterCount.setdefault(character, 0)
-    letterCount[character] = letterCount[character] + 1
-
-pprint.pprint(letterCount)
-
-
-food = {'Apples': 'I am an apple!', 'Bananas': 'I\'m the best banana there \
-ever was!', 'Kiwis': 'I\'m a fruit of the tropical variety!'}
-
-print('The apple says - \'' + food.get('Batman', 'Batman DOESN\'T EXIST!')
- + '\'.')
+def printBoard(board):
+    print(board['top-L'] + '|' + board['top-M'] + '|' + board['top-R'])
+    print('-+-+-')
+    print(board['mid-L'] + '|' + board['mid-M'] + '|' + board['mid-R'])
+    print('-+-+-')
+    print(board['low-L'] + '|' + board['low-M'] + '|' + board['low-R'])
+printBoard(theBoard)

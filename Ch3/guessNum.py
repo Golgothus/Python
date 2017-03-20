@@ -6,14 +6,14 @@
 # Ch. 3 Functions
 # This program will allow the user to guess a number
 
-import random
+from random import randint
 
-secretNum = random.randint(1,100)
+secretNum = randint(1, 100)
 print('I am thinking of a number bewteen 1 & 100.')
 print('Try and guess the number in less than 7 tries.')
 
 # The player gets 7 tries.
-for guessAttempt in range (1,7):
+for guessAttempt in range(1, 7):
     print('Guess attempt number ' + str(guessAttempt) + '.')
     try:
         guess = int(input())
@@ -22,7 +22,7 @@ for guessAttempt in range (1,7):
         elif guess > secretNum:
             print('Your guess is too high, try again.')
         else:
-            break # This is the correct guess!
+            break  # This is the correct guess!
 
     except ZeroDivisionError:
         print('Error: Cannot divide by 0, please use a different number .')

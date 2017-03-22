@@ -13,7 +13,11 @@ legDay = {
 }
 
 
-print(legDay.keys()[1][2])
+def workout(exercise,reps):
+    weight = 0;
+    for e,r in exercise.items():
+        weight = weight + r.get(reps,0)
+    return weight
 
 
 print('Exercises to be done on legday: ')

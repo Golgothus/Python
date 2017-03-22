@@ -13,15 +13,15 @@ legDay = {
 }
 
 
-def workout(exercise,reps):
-    weight = 0;
-    for e,r in exercise.items():
-        weight = weight + r.get(reps,0)
-    return weight
-
+def workout(exercise, reps):
+    for e, r in exercise.items():
+        print(exercise[reps].items())
 
 print('Exercises to be done on legday: ')
-print('Leg Press with - ' + str(workout(legDay, 'Leg Press')))
-print('Leg Extensions - ' + str(workout(legDay, '8 Reps')))
-print('Leg Curls - ' + str(workout(legDay, '8 Reps')))
-print('Calf Raises - ' + str(workout(legDay, '8 Reps')))
+print('Potato' + str(legDay(workout(legDay, 'Leg Press'))))
+# print(str(workout(legDay, 'Leg Extensions')))
+# print(str(workout(legDay, 'Leg Curls')))
+# print(str(workout(legDay, 'Calf Raises')))
+
+# print(legDay['Leg Extensions'])
+

@@ -30,7 +30,6 @@ while True:
         print('The release date is - ' + movies[name])
     else:
         print('The movie was not found.')
-        print('When is its release date?')
-        release = input()
+        release = input('When is its release date?')
         movies[name] = release
         print('Your movie has been added, sorry for the inconvenience!')

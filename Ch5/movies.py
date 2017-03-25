@@ -5,9 +5,11 @@
 # https://github.com/Golgothus
 # Chapter 5 - Dictionaries
 
-movies = {'The Good Dinosaur': 'November 25, 2015 - Pixar Animation Studios',
-'Zootopia': 'March 4, 2016 - Walt Disney Animation Studios',
-'Moana': 'November 23, 2016 - Walt Disney Animation Studios'}
+movies = {
+    'The Good Dinosaur': 'November 25, 2015 - Pixar Animation Studios',
+    'Zootopia': 'March 4, 2016 - Walt Disney Animation Studios',
+    'Moana': 'November 23, 2016 - Walt Disney Animation Studios'
+}
 
 # k will pull in the index for the dict key
 for k in movies:

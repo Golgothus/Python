@@ -5,23 +5,37 @@
 # https://github.com/Golgothus
 # Chapter 5 - Dictionaries
 
-legDay = {
-    'Leg Press': {'8 Reps': 270, '6 Reps': 320, '4 Reps': 360},
-    'Leg Extensions': {'8 Reps': 110, '6 Reps': 140, '4 Reps': 160},
-    'Leg Curls': {'8 Reps': 80, '6 Reps': 120, '4 Reps': 140},
-    'Calf Raises': {'8 Reps': 90, '6 Reps': 110, '4 Reps': 140}
+press = {
+    'workout': 'Press',
+     '8 Reps': 270,
+     '6 Reps': 320,
+     '4 Reps': 360
+}
+extensions = {
+    'workout': 'Extensions',
+    '8 Reps': 110,
+    '6 Reps': 140,
+    '4 Reps': 160
+}
+curls = {
+    'workout': 'Curls',
+    '8 Reps': 80,
+    '6 Reps': 120,
+    '4 Reps': 140
+}
+raises = {
+    'workout': 'Calf Raises',
+    '8 Reps': 90,
+    '6 Reps': 110,
+    '4 Reps': 140
 }
 
+exercises = (press,extensions,curls,raises)
 
-def workout(reps):
-    for e, r in reps.items():
-        print(legDay[reps].items())
-
-print('Exercises to be done on legday: ')
-print('Potato ' + str(workout(legDay['Leg Press'])))
-# print(str(workout(legDay, 'Leg Extensions')))
-# print(str(workout(legDay, 'Leg Curls')))
-# print(str(workout(legDay, 'Calf Raises')))
-
-# print(legDay['Leg Extensions'])
+for e in exercises:
+    print('During our Leg ' + e['workout'] + ' we will be doing the following:')
+    print(e['8 Reps'])
+    print(e['6 Reps'])
+    print(e['4 Reps'])
+    print()
 

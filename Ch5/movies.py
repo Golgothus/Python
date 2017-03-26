@@ -12,6 +12,7 @@ movies = {
 }
 
 # k will pull in the index for the dict key
+print("Upcoming Disney releases!")
 for k in movies:
     print(k)
 

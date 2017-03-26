@@ -4,7 +4,6 @@
 # Enjoy, Golgothus
 # https://github.com/Golgothus
 # Chapter 5 - Dictionaries
-
 press = {
     'workout': 'Press',
      '8 Reps': 270,
@@ -33,9 +32,8 @@ raises = {
 exercises = (press,extensions,curls,raises)
 
 for e in exercises:
-    print('During our Leg ' + e['workout'] + ' we will be doing the following:')
-    print(e['8 Reps'])
-    print(e['6 Reps'])
-    print(e['4 Reps'])
+    print('During our Leg ' + e['workout'] + ' workout we will be doing the following:')
+    print('We will be working with - ' + str(e['8 Reps']) + ' at 8 reps.')
+    print('We will be working with - ' + str(e['6 Reps']) + ' at 6 reps.')
+    print('We will be working with - ' + str(e['4 Reps']) + ' at 4 reps.')
     print()
-

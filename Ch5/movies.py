@@ -25,8 +25,7 @@ print('')
 
 while True:
     print('Please enter a recent release from Disney to view its airing date.')
-    print('(Leave blank to quit)')
-    name = input()
+    name = input('(Leave blank to quit)')
     if name == '':
         break
     if name in movies:

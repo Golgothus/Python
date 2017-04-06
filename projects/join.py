@@ -6,15 +6,19 @@
 # https://github.com/Golgothus
 
 import os
-os.chdir('//home/golgothus/Python/')
-print(os.getcwd())
-"""
-# os.path.join('~','Python','projects')
 
+path = input('Enter a path you\'d like to view the size of - ')
+path = '//home/golgothus/' + path
 
-myFiles = ['ex1.py', 'ex2.py', 'ex3.py']
-for fileName in myFiles:
-    print(os.path.join('//home/golgothus/Python/', fileName))
+print()
+print('The directory you have opted into working with is as folows:')
+print(os.path.dirname(path))
 
-os.makedirs('test')
-"""
+# print('The files within the directory you chose are below:')
+# print(os.listdir(path))
+
+print()
+print('The amount of data within the directory is below:')
+print(os.path.getsize(path))
+# path = "//home/golgothus/Python/join.py"
+# os.path.basename(path)

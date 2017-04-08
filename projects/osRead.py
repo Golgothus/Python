@@ -7,21 +7,39 @@
 
 import os
 
-def userDir(path):
-    if os.path.exists(path) and os.path.isdir(path):
-        val = 'Your input is a directory.'
-        print(val)
-    elif os.path.exists(path) and os.path.isfile(path):
-        val = 'Your input is a file.'
-        print(val)
+# if user wants to read file
+# if user wants to write to file
+# if user wants to create a file
+# if user wants to overwrite a file
+# if user wants to save a file
+
+def filePath(userFile):
+        if os.path.isfile(userFile):
+            openFile = open(userFile)
+            fileContent = openFile.read()
+            print(fileContent)
+        elif os.path.isfile(userFile) and os.path.exists()
     else:
-        val = 'Please adjust your input to either a file or a directory.'
-        print(val)
+        print("The path you entered was invalid and not a file.")
 
 answer = None
 
 while answer != 'No.':
-    path = input('Please insert a directory or a file: ')
-    userDir(path)
-    print()
-    answer = input("Do you wish to continue? ")
+    path = input('First, insert an existing file path: ')
+    if not os.path.exists(path):
+        answer = input('Would you like to read, write, or overwrite file?')
+        if answer == 'read':
+            fileRead(path)
+            break
+        elif answer == 'write':
+            fileWrite(path)
+            break
+        elif answer == 'overwrite':
+            fileOw(path)
+            break
+        else:
+            print('You did insert a proper response.')
+
+    answer = input('''Do you wish to continue?
+(Insert \"No.\" to stop.)
+Input = ''')

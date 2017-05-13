@@ -18,15 +18,15 @@ def filePath(userFile):
             openFile = open(userFile)
             fileContent = openFile.read()
             print(fileContent)
-        elif os.path.isfile(userFile) and os.path.exists()
-    else:
-        print("The path you entered was invalid and not a file.")
+        #elif os.path.isfile(userFile) and os.path.exists():
+        else:
+            print("The path you entered was invalid and not a file.")
 
 answer = None
 
 while answer != 'No.':
     path = input('First, insert an existing file path: ')
-    if not os.path.exists(path):
+    if os.path.exists(path):
         answer = input('Would you like to read, write, or overwrite file?')
         if answer == 'read':
             fileRead(path)

@@ -11,5 +11,6 @@ directory = os.listdir('/')
 
 for d in directory:
     print(d)
+    
 #os.chdir('/')
 #os.makedirs(createDir)

@@ -7,8 +7,11 @@
 
 import requests
 import bs4
+import sys
+import webbrowser
 
-res = requests.get('https://www.nsa.gov')
+print('Researching...')
+res = requests.get('https://www.google.gov' + ''.join(sys.argv[1:]))
 
 try:
     res.raise_for_status()
@@ -16,21 +19,10 @@ try:
 except Exception as exc:
     print('There was a problem: %s' % (exc))
 
-playFile = open('nsa.txt')
+#Open a browser tab for each result.
+soupTasty = bs4.BeautifulSoup(res.text, 'html.parser')
+linkelems = soupTasty.select('.r a')
+numOpen = min(7, len(linkelems))
 
-#for chunk in res.iter_content(100000):
-#    playFile.write(chunk)
-
-#playFile.close()
-
-p1Soup = bs4.BeautifulSoup(playFile.read(), 'html.parser')
-
-elems = p1Soup.select('p')
-
-print(type(elems))
-print(str(elems[0]))
-
-for p in elems:
-    print(p)
-
-print(len(elems))
+for l in range(numOpen):
+    webbrowser.open('http://nsa.gov' + linkelems[l].get('href'))

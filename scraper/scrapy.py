@@ -8,10 +8,9 @@
 import requests
 import bs4
 import sys
-import webbrowser
 
 print('Researching...')
-res = requests.get('https://www.google.gov' + ''.join(sys.argv[1:]))
+res = requests.get('https://www.google.com' + ''.join(sys.argv[1:]))
 
 try:
     res.raise_for_status()

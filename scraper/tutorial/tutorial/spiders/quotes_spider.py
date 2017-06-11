@@ -5,7 +5,8 @@ class QuotesSpider(scrapy.Spider):
 
     def start_requests(self):
         urls = [
-            'https://www.dhs.gov'
+            'https://www.twitch.tv',
+            'https://www.twitch.tv/golgothus'
         ]
 
         for url in urls:
@@ -13,8 +14,8 @@ class QuotesSpider(scrapy.Spider):
 
     def parse(self, response):
         page = response.url.split('/')[-2]
-        filename = input('Insert filename here...')
-        #filename = 'quotes-{}.html'.format(page)
+        #filename = input('Insert filename here - ')
+        filename = '{}.html'.format(page)
         with open(filename, 'wb') as f:
             f.write(response.body)
         self.log('Saved file {}'.format(filename))

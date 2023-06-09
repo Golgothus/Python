@@ -22,8 +22,7 @@ def userInput():
             sys.exit()
     else:     
         try:
-            while response != 1:
-                response = collatz(int(response))
+            collatz(int(response))
         except ValueError:
             print('Value needs to be an integer.')
 

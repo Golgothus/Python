@@ -24,32 +24,31 @@ def getMenu():
 
 
 def gamble(bet):
+    global balance
     chance = random.randint(0,100)
     if chance <= 49:
         print('Your loss is my win.')
-        removeFunds(bet)
-    elif chance == 20:
-        print('Holy shit, nat 20!')
-        balance = getBalance() + (bet * 4)
+        balance = removeFunds(bet)
         return balance
+    #elif chance == 20:
+    #    print('Holy shit, nat 20!')
+    #    balance = getBalance() + (bet * 4)
     else:
         print('Luck is on your side.')
-        addFunds(bet)
+        balance = addFunds(bet)
+        return balance
 
 
 def getBalance():
+    global balance
     return balance
 
 
 def addFunds(bet):
-    balance = getBalance() + (bet * 1.5)
-    print(balance)
     return getBalance() + (bet * 1.5)
 
 
 def removeFunds(bet):
-    #balance = getBalance() - bet
-    print(balance)
     return getBalance() - bet
 
 
@@ -59,8 +58,9 @@ def removeFunds(bet):
 def userInput():
     response = input()
 
+
     if response == '1':
-        getBalance()
+        print(f'Your current balance is {getBalance()}.')
     elif response == '2':
         try:
             bet = int(input('Enter bet amount:'))

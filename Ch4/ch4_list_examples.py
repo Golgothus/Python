@@ -1,7 +1,7 @@
 #! /usr/bin/python
 
 
-languages = ['Powershell','Python','HTML','CSS','jQuery']
+languages = ['Powershell','Python','HTML','CSS','jQuery','banana','grapes','Dobby']
 
 
 def regularList(list):
@@ -73,6 +73,16 @@ def remList(list):
     print(list)
 
 
+def sortList(list):
+    list.sort(key=str.lower)
+    print(list)
+
+
+def reverseList(list):
+    list.reverse()
+    return list
+
+
 print('Running regularList()')
 regularList(languages)
 print('Running multiList()')
@@ -90,3 +100,7 @@ catList(languages)
 print('Running remList():')
 remList(languages)
 regularList(languages)
+print('Running sortList():')
+sortList(languages)
+print('Running reverseList():')
+print(reverseList(languages))

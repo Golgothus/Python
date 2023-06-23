@@ -25,11 +25,13 @@ def multiList():
     
     for item in multiValueList:
         print(item)
-
+    
 
     print(multiValueList[0][3]) # prints the item from list 0, with index 3
     print(multiValueList[1][3]) # prints the item from list 1, with index 3
 
+
+    return
 
 def negativeList(list):
     print(list[-4])
@@ -54,9 +56,8 @@ def getListLen(list):
 
 
 def changeList(list):
-    print(list)
     list[1] = 'special'
-    print (list)
+    return
 
 
 def catList(list):
@@ -83,18 +84,16 @@ def reverseList(list):
     return list
 
 
-print('Running regularList()')
+print(f'Running regularList():')
 regularList(languages)
-print('Running multiList()')
+print('Running multiList():')
 multiList()
-print('Running negativeList()')
+print(f'Running negativeList():')
 negativeList(languages)
-print('Running sliceList():')
+print(f'Running sliceList():')
 sliceList(languages)
-print('Running getListLen():')
-print(getListLen(languages))
-print('Running changeList():')
-changeList(languages)
+print(f'Running getListLen(): \n {getListLen(languages)}')
+print(f'Running changeList(): \n {changeList(languages)}')
 print('Running catList():')
 catList(languages)
 print('Running remList():')
@@ -104,3 +103,4 @@ print('Running sortList():')
 sortList(languages)
 print('Running reverseList():')
 print(reverseList(languages))
+print(languages)

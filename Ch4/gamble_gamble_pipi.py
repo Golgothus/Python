@@ -5,7 +5,7 @@ import sys
 
 
 balance = 2500
-
+chance = random.randint(0,100)
 
 def getMenu():
     menu = f"""
@@ -25,22 +25,20 @@ def getMenu():
 
 def gamble(bet):
     global balance
-    chance = random.randint(0,100)
+    global chance
     if chance <= 49:
         print('Your loss is my win.')
         balance = removeFunds(bet)
-        return balance
-    #elif chance == 20:
-    #    print('Holy shit, nat 20!')
-    #    balance = getBalance() + (bet * 4)
+    elif chance == 20:
+        print('Holy shit, nat 20!')
+        balance = getBalance() + (bet * 4)
     else:
         print('Luck is on your side.')
         balance = addFunds(bet)
-        return balance
+    chance = random.randint(0,100)
 
 
 def getBalance():
-    global balance
     return balance
 
 
@@ -52,7 +50,25 @@ def removeFunds(bet):
     return getBalance() - bet
 
 
-# def rig():
+def rig():
+    global chance
+
+    flip = random.randint(0,1)
+
+    if flip == 0:
+        chance = chance - 10
+        print("""
+        Baby don't hurt me.
+        Don't hurt me.
+        No more.
+        """)
+        return chance
+    else:
+        print("""
+        Hold up, wait a minute, put a little LOVE in it!
+        """)
+        chance += random.randint(1,5)
+        return chance
 
        
 def userInput():
@@ -67,10 +83,27 @@ def userInput():
             gamble(bet)
         except(ValueError):
             print('Value must be an integer.')
-    #elif response == '3'
+    elif response == '3':
+        rig()
     elif response == 'exit' or response == '4' :
         sys.exit()
 
+
+def banner():
+   print("""
+
+  ________              ___.   .__             __________        
+ /  _____/_____    _____\_ |__ |  |   ____     \______   \___.__.
+/   \  ___\__  \  /     \| __ \|  | _/ __ \     |     ___<   |  |
+\    \_\  \/ __ \|  Y Y  \ \_\ \  |_\  ___/     |    |    \___  |
+ \______  (____  /__|_|  /___  /____/\___  > /\ |____|    / ____|
+        \/     \/      \/    \/          \/  \/           \/     
+
+by: Golgothus (with assistance from SneakerHax)
+
+    """)
+
+banner()
 
 while True:
     getMenu()

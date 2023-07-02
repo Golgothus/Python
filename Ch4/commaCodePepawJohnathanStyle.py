@@ -7,17 +7,40 @@
 # the last item
 # example: 'apples, bananas, tofu, and cats'
 
+
+def banner():
+    return '''
+    _____                              _       _                 _   _                               
+    |  __ \                            | |     | |               | | | |                              
+    | |__) |__ _ __   __ ___      __   | | ___ | |__  _ __   __ _| |_| |__   __ _ _ __    _ __  _   _ 
+    |  ___/ _ \ '_ \ / _` \ \ /\ / /   | |/ _ \| '_ \| '_ \ / _` | __| '_ \ / _` | '_ \  | '_ \| | | |
+    | |  |  __/ |_) | (_| |\ V  V / |__| | (_) | | | | | | | (_| | |_| | | | (_| | | | |_| |_) | |_| |
+    |_|   \___| .__/ \__,_| \_/\_/ \____/ \___/|_| |_|_| |_|\__,_|\__|_| |_|\__,_|_| |_(_) .__/ \__, |
+            | |                                                                        | |     __/ |
+            |_|                                                                        |_|    |___/ 
+    '''           
+
+
 userList = []
+
 
 def outList(item):
 
     userList.append(item)
 
-    if item == 'exit':
+    if item == 'exit' and range(len(userList) == 1):
+        userList.remove('exit')
+
+        return 'Program closing, no items provided.'
+    elif item == 'exit':
         userList.remove('exit')
         userList[-1] = "and " + userList[-1]
         return ', '.join(userList)
     
+    
+print(banner())
+
+
 while True:
     item = input('enter an item, otherwise type exit: \n')
 

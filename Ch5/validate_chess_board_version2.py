@@ -16,7 +16,7 @@ Check that pieces names are valid
 all_pieces = []
 player_color = ['b','w']
 piece_type = ['king','queen','bishop','knight','rook','pawn']
-piece_count = {
+valid_piece_count = {
     'king': (1,1),
     'queen': (0,1),
     'bishop': (0,2),

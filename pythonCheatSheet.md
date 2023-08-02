@@ -11,6 +11,11 @@ This document will provide references to things I've found useful while reading 
 - keys()
 - values()
 - items()
+- isx()
+- .join()
+- .split()
+- .startswith()
+- .endswith()
 
 ## Useful readings
 

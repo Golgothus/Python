@@ -17,22 +17,30 @@ Your printTable() function would print the following:
 
 """
 
-def printTable(string_list):
-    big_word = ''
+def print_table(string_list):
+    # which will create a list containing the same number of 0 values 
+    # as the number of inner lists in string_list
+    col_width = [0] * len(string_list)
 
+    # set value to col_width to justify list accordingly
     for l in range(len(string_list)):
         for i in range(len(string_list[l])):
-            print(string_list[l][i])
+            if len(string_list[l][i]) > col_width[l]:
+                col_width.pop(l)
+                col_width.insert(l, len(string_list[l][i]))
 
-            if len(string_list[l][i]) > len(big_word):
-                big_word = string_list[l][i]
-            
-    print(big_word)
+    # print table
+    for l in range(len(string_list[0])):
+        for i in range(len(string_list)):
+            #print(string_list[i][l],end="")
+            justified = string_list[i][l].rjust(col_width[i])
+            print(justified + " ", end="")
+        print()
 
 test = [
-    ['apples', 'oranges', 'cherries', 'banana'],
-    ['Alice', 'Bob', 'Carol', 'David'],
-    ['dogs', 'cats', 'moose', 'goose']
-    ]
+    ["apples", "oranges", "cherries", "banana"],
+    ["Alice", "Bob", "Carol", "David"],
+    ["dogs", "cats", "moose", "goose"]
+]
 
-printTable(test)
+print_table(test)

@@ -17,30 +17,6 @@ This document will provide references to things I've found useful while reading 
 - .startswith()
 - .endswith()
 
-## Pattern Matching
-
-1. Import the regex module with `import re`.
-2. Create a Regex object with the `re.compile()` function. (Remember to use a raw string.)
-3. Pass the string you want to search into the Regex object’s search() method. This returns a Match object.
-4. Call the Match object’s group() method to return a string of the actual matched text.
-
-Example of this process:
-
-```Python
-# this expression is to capture Phone-Numbers
-phone_rex = re.compile(r'\d{3}-\d{3}-\d{4}')
-# mo = shorthand for Match Object
-# If there is a match against your Regular Expression, a Match object will be created
-mo = phone_rex.search('Test Phone Number is: 111-222-3333')
-print(f'Number found: {mo.group()}')
-```
-
-> Reference: [Automate the Boring Stuff with Python, 2nd Edition by Al Sweigart, Chapter 7 "Review of Regular Expression Matching"](https://automatetheboringstuff.com/2e/chapter7/#calibre_link-1143)
-
-The following items will need to be escaped if attempting to capture them in patterns using regex:
-
-`.  ^  $  *  +  ?  {  }  [  ]  \  |  (  )`
-
 ## Useful readings
 
 - [Scoping / Global Variables](https://stackoverflow.com/questions/17911831/python-global-variable-not-updating)

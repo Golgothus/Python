@@ -62,7 +62,7 @@ def clip_text(copied_text):
         else:
             continue
         if groups[7] != "":
-            phone += " x" + groups[8]
+            phone += " x" + groups[7]
         matches.append(phone)
 
     #    for groups in rex_email().findall(copied_text):

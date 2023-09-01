@@ -67,7 +67,11 @@ def clip_text(copied_text):
 
     #    for groups in rex_email().findall(copied_text):
     for groups in rex_email().findall(copied_text):
-        email = groups[0]
+        email = ""
+        if groups[0] in matches:
+            continue
+        else:
+            email += groups[0]
         matches.append(email)
 
     return matches
@@ -80,3 +84,4 @@ new_matches = ""
 for matches in match_objects:
     new_matches += matches + "\n"
 pyperclip.copy(new_matches)
+print(new_matches)

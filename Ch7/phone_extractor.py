@@ -1,18 +1,24 @@
 #! /usr/bin/python
 
-# Get the text off the clipboard.
-# Find all phone numbers and email addresses in the text.
-# Paste them onto the clipboard.
-# Use the pyperclip module to copy and paste strings.
-# Create two regexes, one for matching phone numbers and the other for matching email addresses.
-# Find all matches, not just the first match, of both regexes.
-# Neatly format the matched strings into a single string to paste.
-# Display some kind of message if no matches were found in the text.
+"""
+Get the text off the clipboard.
+Find all phone numbers and email addresses in the text.
+Paste them onto the clipboard.
+Use the pyperclip module to copy and paste strings.
+Create two regexes, one for matching phone numbers and the other for matching email addresses.
+Find all matches, not just the first match, of both regexes.
+Neatly format the matched strings into a single string to paste.
+Display some kind of message if no matches were found in the text.
+"""
 
-import pyperclip, re
+import re
+import pyperclip
 
 
 def rex_phone_number():
+    """
+    Pattern matching for phone numbers.
+    """
     phone_regex = re.compile(
         r"""(
         (\d{3}|\(\d{3}\))?              # area code
@@ -28,6 +34,9 @@ def rex_phone_number():
 
 
 def rex_email():
+    """
+    Pattern matching for emails.
+    """
     email_regex = re.compile(
         r"""(
         [a-zA-Z0-9._%+-]+
@@ -41,6 +50,10 @@ def rex_email():
 
 
 def clip_text(copied_text):
+    """
+    Runs necessary pattern matching functions against the copied_text
+    Returns any found matches
+    """
     matches = []
 
     for groups in rex_phone_number().findall(copied_text):
@@ -52,16 +65,18 @@ def clip_text(copied_text):
             phone += " x" + groups[8]
         matches.append(phone)
 
+    #    for groups in rex_email().findall(copied_text):
+    for groups in rex_email().findall(copied_text):
+        email = groups[0]
+        matches.append(email)
+
     return matches
 
 
-# TODO: Copy results to the clipboard
-
-# print(clip_text(pyperclip.paste()))
-# print(clip_text(pyperclip.paste()))
-phone_numbers = clip_text(pyperclip.paste())
-new_phone = ""
-for number in phone_numbers:
-    new_phone += number + "\n"
-
-print(new_phone)
+# running initial function to kick off clip_text
+match_objects = clip_text(pyperclip.paste())
+# Copy results to the clipboard
+new_matches = ""
+for matches in match_objects:
+    new_matches += matches + "\n"
+pyperclip.copy(new_matches)

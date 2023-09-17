@@ -1,7 +1,9 @@
 #! /usr/bin/python3
 
 """
-Write a regular expression that can detect dates in the DD/MM/YYYY format. Assume that the days range from 01 to 31, the months range from 01 to 12, and the years range from 1000 to 2999. Note that if the day or month is a single digit, it’ll have a leading zero.
+Write a regular expression that can detect dates in the DD/MM/YYYY format. 
+Assume that the days range from 01 to 31, the months range from 01 to 12, and the years range from 1000 to 2999. 
+Note that if the day or month is a single digit, it’ll have a leading zero.
 """
 
 import re
@@ -20,7 +22,9 @@ def date_match():
     """
     date_rex = re.compile(
         r"""
-        ((\d\d)\/(\d\d)\/(\d{4}))
+        ((\d\d|\d)\/(\d\d|\d)\/(\d{4}))
+#        |
+#        ((\d\d)\-(\d\d)\-(\d{4})))
         """,
         re.VERBOSE,
     )
@@ -61,9 +65,18 @@ def is_valid_date(date):
 
     full_date, dd, mm, yyyy = date
 
+    # date_match().sub(r"(\d)\/(\d)\/(\d{4})", date)
+
+    if len(dd) == 1:
+        dd = "0" + dd
+    if len(mm) == 1:
+        mm = "0" + mm
+
     if is_leap_year(yyyy) is True:
         leap_year_date = {"02": "29"}
         months.update(leap_year_date)
+
+    full_date = dd + "/" + mm + "/" + yyyy
 
     if mm in months.keys():
         if dd <= months[mm]:
@@ -111,6 +124,8 @@ dates = [
     "29/02/2020",
     "29/02/2018",
     "29/02/2100",
+    "01-01-1993",
+    "1/1/1993",
 ]
 
 clip(str(dates))

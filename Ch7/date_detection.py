@@ -77,11 +77,8 @@ def is_leap_year(year):
     - Every year evenly divisible by 4 AND NOT evenly divisible by 100 EXCEPT evenly divisible by 400
     """
 
-    if int(year) % 4 == 0 and not int(year) % 100 == 0:
-        if int(year) % 400 == 0:
-            return False
-        else:
-            return True
+    if int(year) % 4 == 0 and not int(year) % 100 == 0 or int(year) % 400 == 0:
+        return True
     else:
         return False
 
@@ -109,6 +106,11 @@ dates = [
     "01/01/2024",
     "29/02/2024",
     "29/02/2023",
+    "29/02/2000",
+    "29/02/1993",
+    "29/02/2020",
+    "29/02/2018",
+    "29/02/2100",
 ]
 
 clip(str(dates))

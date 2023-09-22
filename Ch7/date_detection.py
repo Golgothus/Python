@@ -2,7 +2,8 @@
 
 """
 Write a regular expression that can detect dates in the DD/MM/YYYY format. 
-Assume that the days range from 01 to 31, the months range from 01 to 12, and the years range from 1000 to 2999. 
+Assume that the days range from 01 to 31, the months range from 01 to 12.
+The years range from 1000 to 2999. 
 Note that if the day or month is a single digit, it’ll have a leading zero.
 """
 
@@ -87,7 +88,8 @@ def is_valid_date(date):
 
 def is_leap_year(year):
     """
-    - Every year evenly divisible by 4 AND NOT evenly divisible by 100 EXCEPT evenly divisible by 400
+    - Every year evenly divisible by 4 AND NOT evenly divisible by 100
+    - EXCEPT evenly divisible by 400
     """
 
     if int(year) % 4 == 0 and not int(year) % 100 == 0 or int(year) % 400 == 0:
@@ -102,7 +104,6 @@ def clip(text):
     - Check for pattern matching
     - Check for valid date criteria
     """
-    matches = []
 
     for groups in date_match().findall(text):
         print(is_valid_date(groups))

@@ -16,23 +16,21 @@ def string_strip(text, characters):
     return re.sub(rex, "---F's in chat---", text)
 
 
-def reg_strip(self, rex=None):
+def reg_strip(text, rex=None):
     """
     if rex = None:
-        self.strip()
+        text.strip()
     Else:
         Characters specified in the second argument to the function will be removed from the string.
     """
 
-    user_input = self
-
     if rex == None:
-        return user_input.strip()
+        return text.strip()
     else:
-        return string_strip(user_input, rex)
+        return string_strip(text, rex)
 
 
-user_input = "     Pickles are my favorites      "
-print(user_input)
-print(reg_strip(user_input))
-print(reg_strip(user_input, "Pckea"))
+text = "     Pickles are my favorites      "
+print(text)
+print(reg_strip(text))
+print(reg_strip(text, "Pckea"))

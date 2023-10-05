@@ -34,14 +34,16 @@ def sandwich():
     )
     if protein == "Vegetarian":
         veggies = pyip.inputMenu(
-            ["Tofu", "Lettuce", "Tomato", "Peppers", "Olives", "Cucumber Slices", numbered=True]
+            ["Tofu", "Lettuce", "Tomato", "Peppers", "Olives", "Cucumber Slices"],
+            numbered=True,
         )
     else:
         veggies = None
     cheese = pyip.inputYesNo("Would you like cheese? ")
     if cheese == "yes":
         cheese_type = pyip.inputMenu(
-            ["American", "Cheddar", "Pepperjack", "Smoked Gouda", "Provologne", numbered=True]
+            ["American", "Cheddar", "Pepperjack", "Smoked Gouda", "Provologne"],
+            numbered=True,
         )
     else:
         cheese_type = None
@@ -55,7 +57,8 @@ def sandwich():
                 "Spices and Oregano",
                 "Caesar Dressing",
                 "Ranch Dressing",
-            ], numbered=True
+            ],
+            numbered=True,
         )
     else:
         condiments_choice = None
